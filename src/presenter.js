@@ -1,4 +1,4 @@
-import {PosInicial, VerificarFormatoEntrada,Comands,VerificarComandos,ComandoControlarAuto} from "./Proyecto_1";
+import {PosInicial, VerificarFormatoEntrada,Comands,VerificarComandos,ComandoControlarAuto,ComandosCoordenadas} from "./Proyecto_1";
 
 const first = document.querySelector("#primer-numero");
 const form = document.querySelector("#proyecto-form");

@@ -22,3 +22,8 @@ export function VerificarFormatoEntrada(posicionX, posicionY, orientacion) {
   
     return false; // El formato no es válido
   }
+
+  export function Comands(comandos)
+{
+    return comandos;
+}

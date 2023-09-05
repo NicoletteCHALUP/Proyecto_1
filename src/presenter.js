@@ -1,15 +1,23 @@
-import sumar from "./sumador";
+import {PosInicial, VerificarFormatoEntrada} from "./Proyecto_1";
 
 const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
 const form = document.querySelector("#sumar-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const firstComand = first.value;//(convertir a números enteros) valores de un array 
+  const X = Number.parseInt(firstComand[0]);
+  const Y = Number.parseInt(firstComand[2]);
+  const posicionX = Number.parseInt(firstComand[4]);
+  const posicionY = Number.parseInt(firstComand[6]);
+  const orientacion= Number.parseInt(firstComand[7]);
+  let comandos=""
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  for(let j=9; j < firstComand.length; j++){
+    comandos+=firstComand[j]; //avanzar
+
+  }
+  div.innerHTML = "<p> La Posicion INICIAL del Carro es;" + PosInicial(X, Y,orientacion) + "</p>";
 });

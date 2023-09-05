@@ -32,3 +32,14 @@ export function VerificarFormatoEntrada(posicionX, posicionY, orientacion) {
     const comandosValidos = ["A", "I", "D"];
     return comandos.split("").every((char) => comandosValidos.includes(char));
   }
+
+ export function ComandoControlarAuto(comando, o) {
+    const transiciones = {
+      "N": { "I": "E", "D": "O" },
+      "O": { "I": "N", "D": "S" },
+      "E": { "I": "S", "D": "N" },
+      "S": { "I": "O", "D": "E" }
+    };
+  
+    return transiciones[o] && transiciones[o][comando] ? transiciones[o][comando] : o;
+  }

@@ -1,5 +1,5 @@
 
-import {PosInicial,VerificarFormatoEntrada,Comands,VerificarComandos } from "./Proyecto_1";
+import {PosInicial,VerificarFormatoEntrada,Comands,VerificarComandos,ComandoControlarAuto } from "./Proyecto_1";
 
 describe("Proyecto 1 auto funcionamiento de movimientos", () => {
 
@@ -21,6 +21,10 @@ describe("Proyecto 1 auto funcionamiento de movimientos", () => {
     
     it("Deberia Validar comandos posibles para controlar el auto que son: I, D, A (Izquierda, Derecha, Avanzar) Si es INcorrecto FALSE", () => {
         expect(VerificarComandos("IAIAIARTA")).toEqual(false);
+      });
+
+    it("Deberia Poder ejecutar el comando 'izquierda", () => {
+        expect(ComandoControlarAuto("I","N")).toEqual("E");
       });
   });
   

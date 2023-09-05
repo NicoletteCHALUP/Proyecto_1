@@ -27,3 +27,8 @@ export function VerificarFormatoEntrada(posicionX, posicionY, orientacion) {
 {
     return comandos;
 }
+
+ export function VerificarComandos(comandos) {
+    const comandosValidos = ["A", "I", "D"];
+    return comandos.split("").every((char) => comandosValidos.includes(char));
+  }

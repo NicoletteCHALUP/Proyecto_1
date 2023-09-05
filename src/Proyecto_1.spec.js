@@ -1,5 +1,5 @@
 
-import {PosInicial,VerificarFormatoEntrada,Comands } from "./Proyecto_1";
+import {PosInicial,VerificarFormatoEntrada,Comands,VerificarComandos } from "./Proyecto_1";
 
 describe("Proyecto 1 auto funcionamiento de movimientos", () => {
 
@@ -14,5 +14,10 @@ describe("Proyecto 1 auto funcionamiento de movimientos", () => {
     it("Deberia Retornar Comando Ingresado por el usuario", () => {
         expect(Comands("IAIAIAIAA")).toEqual("IAIAIAIAA");
       });
+
+    it("Deberia Validar comandos posibles para controlar el auto que son: I, D, A (Izquierda, Derecha, Avanzar) Si es Correcto TRUE", () => {
+        expect(VerificarComandos("IAIAIAIAA")).toEqual(true);
+      });
+    
   });
   

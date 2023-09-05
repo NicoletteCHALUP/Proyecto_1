@@ -43,7 +43,7 @@ export function VerificarFormatoEntrada(posicionX, posicionY, orientacion) {
   
     return transiciones[o] && transiciones[o][comando] ? transiciones[o][comando] : o;
   }
-
+/*
   export function ComandosCoordenadas(posicionX, posicionY, orientacion, tamX, tamY) {
     const direcciones = {
       "N": { x: 0, y: 1 },
@@ -88,5 +88,46 @@ export function VerificarFormatoEntrada(posicionX, posicionY, orientacion) {
   }
   
   
+  */
+  export function MoverAuto(comandos, posicionX, posicionY, orientacion, tamX, tamY) {
+    let X = posicionX;
+    let Y = posicionY;
   
+    if (!VerificarComandos(comandos)) {
+      return [X, Y, orientacion];
+    }
+  
+    for (let i = 0; i < comandos.length; i++) {
+      if (comandos[i] === "A") {
+        [X, Y] = ComandosCoordenadas(X, Y, orientacion, tamX, tamY);
+      } else if (comandos[i] === "I" || comandos[i] === "D") {
+        orientacion = ComandoControlarAuto(comandos[i], orientacion);
+      }
+    }
+  
+    return [X, Y, orientacion];
+  }
+  
+  export function ComandosCoordenadas(posicionX, posicionY, orientacion, tamX, tamY) {
+    const direcciones = {
+      "N": { x: 0, y: 1 },
+      "E": { x: 1, y: 0 },
+      "O": { x: -1, y: 0 },
+      "S": { x: 0, y: -1 }
+    };
+  
+    if (orientacion in direcciones) {
+      const direccion = direcciones[orientacion];
+      const nuevoX = posicionX + direccion.x;
+      const nuevoY = posicionY + direccion.y;
+  
+      // Verifica que las nuevas coordenadas estén dentro de los límites válidos
+      if (nuevoX >= 1 && nuevoX <= tamX && nuevoY >= 1 && nuevoY <= tamY) {
+        return [nuevoX, nuevoY];
+      }
+    }
+  
+    // Si la orientación no es válida o la nueva posición está fuera de los límites, devuelve la posición original.
+    return [posicionX, posicionY];
+  }
   

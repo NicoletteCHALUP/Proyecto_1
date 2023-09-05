@@ -1,4 +1,4 @@
-import {PosInicial, VerificarFormatoEntrada,Comands,VerificarComandos,ComandoControlarAuto,ComandosCoordenadas} from "./Proyecto_1";
+import {PosInicial, VerificarFormatoEntrada,Comands,VerificarComandos,ComandoControlarAuto,ComandosCoordenadas,MoverAuto} from "./Proyecto_1";
 
 const first = document.querySelector("#primer-numero");
 const form = document.querySelector("#proyecto-form");
@@ -19,6 +19,7 @@ form.addEventListener("submit", (event) => {
     comandos+=firstComand[j]; //avanzar
 
   }
-  div.innerHTML = "<p> La Posicion INICIAL del Carro es : " + PosInicial(X, Y,orientacion) + "</p>";
+  div.innerHTML = "<p> La Posicion INICIAL del Carro es : " + PosInicial(posicionX, posicionY,orientacion) + "</p>";
   div.innerHTML += "<p>"+"Comando : " +Comands(comandos) + "</p>";
+  div.innerHTML += "<p>"+"La Posicion FINAL del Auto : "+ MoverAuto(comandos,posicionX,posicionY,orientacion,X,Y) + "</p>";
 });

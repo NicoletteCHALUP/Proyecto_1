@@ -68,5 +68,25 @@ export function VerificarFormatoEntrada(posicionX, posicionY, orientacion) {
   }
  
   
+  export function MoverAuto(comandos, posicionX, posicionY, orientacion, tamX, tamY) {
+    let X = posicionX;
+    let Y = posicionY;
+  
+    if (!VerificarComandos(comandos)) {
+      return [X, Y, orientacion];
+    }
+  
+    for (let i = 0; i < comandos.length; i++) {
+      if (comandos[i] == "A") {
+        [X, Y, orientacion] = ComandosCoordenadas(X, Y, orientacion, tamX, tamY);
+      } else if (comandos[i] == "I" || comandos[i] == "D") {
+        orientacion = ComandoControlarAuto(comandos[i], orientacion);
+      }
+    }
+  
+    return [X, Y, orientacion];
+  }
+  
+  
   
   

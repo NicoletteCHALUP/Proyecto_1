@@ -1,5 +1,5 @@
 
-import {PosInicial,VerificarFormatoEntrada,Comands,VerificarComandos,ComandoControlarAuto,ComandosCoordenadas} from "./Proyecto_1";
+import {PosInicial,VerificarFormatoEntrada,Comands,VerificarComandos,ComandoControlarAuto,ComandosCoordenadas,MoverAuto} from "./Proyecto_1";
 
 describe("Proyecto 1 auto funcionamiento de movimientos", () => {
 
@@ -32,6 +32,10 @@ describe("Proyecto 1 auto funcionamiento de movimientos", () => {
 
     it("Deberia Poder ejecutar el comando Segun las coordenadas de Orientacion dadas", () => {
         expect(ComandosCoordenadas(5,1,"N")).toEqual([5,1]);
+      });
+
+    it("Deberia - mostrar la posicion final donde se moveria el auto ", () => {
+        expect(MoverAuto("IAIAIAIAA",1,2,"N",5,5)).toEqual([1,3,"N"]);
       });
   });
   

@@ -19,5 +19,8 @@ describe("Proyecto 1 auto funcionamiento de movimientos", () => {
         expect(VerificarComandos("IAIAIAIAA")).toEqual(true);
       });
     
+    it("Deberia Validar comandos posibles para controlar el auto que son: I, D, A (Izquierda, Derecha, Avanzar) Si es INcorrecto FALSE", () => {
+        expect(VerificarComandos("IAIAIARTA")).toEqual(false);
+      });
   });
   

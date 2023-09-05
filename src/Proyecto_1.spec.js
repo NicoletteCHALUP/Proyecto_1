@@ -26,5 +26,8 @@ describe("Proyecto 1 auto funcionamiento de movimientos", () => {
     it("Deberia Poder ejecutar el comando 'izquierda", () => {
         expect(ComandoControlarAuto("I","N")).toEqual("E");
       });
+    it("Deberia Poder ejecutar el comando 'Derecha", () => {
+        expect(ComandoControlarAuto("D","N")).toEqual("O");
+      });
   });
   
